@@ -262,7 +262,7 @@ body[data-theme="dark"] .floating-icon:hover {
 body[data-theme="dark"] .modal-content {
   background-color: #000;
   color: #e0e0e0;
-  width: 80%;
+  width: 100%;
   max-width: 800px;
 }
 /* Dark mode form inside modals - black background at 85% opacity */
@@ -313,9 +313,9 @@ body[data-theme="dark"] .modal-content form {
   background: #fff;
   border: 2px solid #9b87f5;
   border-radius: 8px;
-  width: calc(25% - 1rem);
+  width: calc(20% - 1rem);
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
   box-sizing: border-box;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   color: #333;
@@ -344,9 +344,16 @@ body[data-theme="dark"] #services-preview .service-item:hover {
   color: #fff;
   border-color: #7e69ab;
 }
-/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
-  #services-preview .service-item {
-    width: 100%;
+  /* Allow modal content to scroll */
+  .modal-content {
+    position: static;      /* Remove fixed positioning */
+    max-height: 90vh;       /* Limit height to 90% of the viewport */
+    overflow-y: auto;      /* Enable vertical scrolling */
+    margin: 1rem;          /* Add margin to prevent touching the edges */
+  }
+  /* Change overlay to absolute so it scrolls with the page */
+  .modal-overlay {
+    position: absolute;
   }
 }
