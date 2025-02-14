@@ -233,7 +233,7 @@ footer {
 }
 .modal-content form button[type="submit"] {
   background-color: #7e69ab; /* Keep your color */
-  transform: scale(0.5); /* Reduce size to 50% */
+  transform: scale(1.0); /* Reduce size to 100% */
   display: block; /* Ensures centering works */
   margin: 0 auto; /* Centers the button */
 }
