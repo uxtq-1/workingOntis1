@@ -123,6 +123,7 @@ footer {
   bottom: 80px;
   right: 20px;
   display: flex;
+  flex-direction: column; /* Stacks icons vertically */
   gap: 1rem;
   z-index: 2000;
 }
