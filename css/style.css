@@ -260,7 +260,7 @@ body[data-theme="dark"] .hero p {
   color: #e0e0e0;
 }
 body[data-theme="dark"] .services {
-  background-color: transparent; /* Or set it to a dark color, e.g., #121212 */
+  background-color: #121212; /* Or set it to a dark color, e.g., #121212 */
 }
 body[data-theme="dark"] .floating-icon {
   background-color: #bb86fc;
