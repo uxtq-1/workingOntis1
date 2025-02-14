@@ -234,9 +234,14 @@ flex: 1 1 100%;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-   display: block;
-    width: 65%; /* Make the button full width */
-    margin-top: 1rem; /* Space above the button */
+  display: inline-block; /* Change from block to inline-block */
+  width: 45%; /* Adjust width as needed */
+  margin-top: 1rem; /* Space above */
+  margin-left: 0; /* Align to the left */
+}
+.modal-content form {
+  display: flex;
+  justify-content: flex-start; /* Aligns button to the left */
 }
 /* Dark mode settings */
 body[data-theme="dark"] {
