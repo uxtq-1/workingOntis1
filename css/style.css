@@ -313,9 +313,9 @@ body[data-theme="dark"] .modal-content form {
   background: #fff;
   border: 2px solid #9b87f5;
   border-radius: 8px;
-  width: calc(20% - 1rem);
+  width: calc(23% - 1rem);
   text-align: center;
-  padding: 1.2rem;
+  padding: 1.5rem;
   box-sizing: border-box;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   color: #333;
@@ -334,7 +334,7 @@ body[data-theme="dark"] .modal-content form {
 }
 /* Dark mode for service items */
 body[data-theme="dark"] #services-preview .service-item {
-  background: #000;
+  background: transparent;
   border: 2px solid #bb86fc;
   color: #e0e0e0;
 }
@@ -347,6 +347,6 @@ body[data-theme="dark"] #services-preview .service-item:hover {
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   #services-preview .service-item {
-    width: 95%;
+    width: 100%;
   }
 }
