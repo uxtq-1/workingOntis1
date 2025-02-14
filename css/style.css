@@ -347,6 +347,6 @@ body[data-theme="dark"] #services-preview .service-item:hover {
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   #services-preview .service-item {
-    width: 80%;
+    width: 95%;
   }
 }
