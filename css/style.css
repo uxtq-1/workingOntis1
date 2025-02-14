@@ -144,13 +144,20 @@ footer {
   align-items: center;
   z-index: 3000;
 }
+.modal-overlay.dark {
+  background-color: #333;
+}
+.modal-overlay.light {
+  background-color: #fff;
+}
 .modal-overlay.active {
   display: flex;
 }
 .modal-content {
   background-color: #7e69ab;
   color: white;
-  width: 90%;
+  width: 80%; /* Adjust as needed */
+  height: 70%; /* Adjust as needed */
   max-width: 600px;
   border-radius: 10px;
   padding: 1rem;
@@ -224,6 +231,20 @@ footer {
   background-color: #7e69ab;
   transform: scale(1.05);
 }
+/* For light theme modals (default) */
+.modal-content {
+  background-color: #f1f1f1; /* Change to your desired light background color */
+  width: 80%;            /* Adjust width as needed */
+  max-width: 800px;      /* Adjust max width as needed */
+  /* other existing styles */
+}
+/* For dark theme modals */
+body[data-theme="dark"] .modal-content {
+  background-color: #333333; /* Change to your desired dark background color */
+  width: 80%;                /* Adjust width as needed */
+  max-width: 800px;          /* Adjust max width as needed */
+  /* other existing styles */
+}
 @media screen and (max-width: 768px) {
   header nav ul {
     flex-direction: column;
@@ -254,6 +275,14 @@ footer {
   .form-item {
     flex: 1 1 100%;
   }
+}
+body[data-theme="light"] .modal-content {
+  background-color: #fff;
+  color: #000;
+}
+body[data-theme="dark"] .modal-content {
+  background-color: #1c1c1c;
+  color: #e0e0e0;
 }
 body[data-theme="dark"] {
   background-color: #121212;
