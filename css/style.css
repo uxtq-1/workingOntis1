@@ -145,6 +145,37 @@ footer {
   background-color: #7e69ab;
   transform: scale(1.1);
 }
+/* Modal Overlay and Content */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  flex-direction: row; /* Default horizontal layout for big screens */
+}
+
+.modal-overlay.dark {
+  background-color: #333;
+}
+
+.modal-overlay.light {
+  background-color: #fff;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* For small screens: switch to vertical layout */
+@media (max-width: 768px) {
+  .modal-overlay {
+    flex-direction: column;
+  }
+}
+
 /* Modal Container */
 .modal-content {
   display: flex;
@@ -223,6 +254,20 @@ footer {
     height: 90vh;
     max-width: 95%;
   }
+}
+.modal-content form button[type="submit"] {
+  background-color: #9b87f5;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  width: 45%;
+  margin-top: 1rem;
+  margin-left: 0;
 }
 /* Dark Mode */
 body[data-theme="dark"] {
