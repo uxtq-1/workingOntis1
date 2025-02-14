@@ -198,9 +198,10 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.form-item.full-width {
-  flex: 1 1 100%;
-}
+flex: 1 1 100%;
+  min-height: 40px;
+  max-height: 150px; /* Prevents it from getting too tall */
+  overflow-y: auto; /* Allows scrolling inside if content overflows */
 .modal-content form label {
   font-size: 1rem;
   font-weight: bold;
@@ -234,7 +235,7 @@ footer {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
    display: block;
-    width: 100%; /* Make the button full width */
+    width: 65%; /* Make the button full width */
     margin-top: 1rem; /* Space above the button */
 }
 /* Dark mode settings */
@@ -348,14 +349,14 @@ body[data-theme="dark"] #services-preview .service-item:hover {
 }
   @media (max-width: 768px) { /* Target small screens */
   .modal-content form {
-    max-height: 80vh; /* Limit height but keep it scrollable */
+    max-height: 110vh; /* Limit height but keep it scrollable */
     overflow-y: auto; /* Enable vertical scrolling */
-    width: 90%; /* Make it fit within small screens */
+    width: 95%; /* Make it fit within small screens */
     padding: 1rem; /* Adjust padding for spacing */
   }
 @media (min-width: 1024px) { /* Target big screens */
   .modal-content form {
-    height: calc(100% + 75px); /* Increase height */
+    height: calc(100% + 125px); /* Increase height */
     max-height: none; /* Allow for expansion */
     width: 50%; /* Keep a balanced width */
   }
