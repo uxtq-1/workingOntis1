@@ -166,6 +166,8 @@ footer {
   border-radius: 10px;
   padding: 1rem;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark but visible */
+  color: #fff; /* Ensure text is readable */
 }
 .close-modal {
   position: absolute;
@@ -206,7 +208,7 @@ footer {
 }
 .modal-content form input,
 .modal-content form textarea {
-  width: 100%;
+   width: 100%; /* Keep fields within form boundaries */
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -217,6 +219,7 @@ footer {
 }
 .modal-content form input:focus,
 .modal-content form textarea:focus {
+  width: 100%; /* Ensure fields adjust to form width */
   border-color: #9b87f5;
   background-color: #fff;
   outline: none;
@@ -230,12 +233,9 @@ footer {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-}
-.modal-content form button[type="submit"] {
-  background-color: #7e69ab; /* Keep your color */
-  transform: scale(1.0); /* Reduce size to 100% */
-  display: block; /* Ensures centering works */
-  margin: 0 auto; /* Centers the button */
+   display: block;
+    width: 100%; /* Make the button full width */
+    margin-top: 1rem; /* Space above the button */
 }
 /* Dark mode settings */
 body[data-theme="dark"] {
@@ -346,9 +346,18 @@ body[data-theme="dark"] #services-preview .service-item:hover {
   color: #fff;
   border-color: #7e69ab;
 }
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
-  #services-preview .service-item {
-    width: 100%;
+  @media (max-width: 768px) { /* Target small screens */
+  .modal-content form {
+    max-height: 80vh; /* Limit height but keep it scrollable */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 90%; /* Make it fit within small screens */
+    padding: 1rem; /* Adjust padding for spacing */
   }
-}
+@media (min-width: 1024px) { /* Target big screens */
+  .modal-content form {
+    height: calc(100% + 75px); /* Increase height */
+    max-height: none; /* Allow for expansion */
+    width: 50%; /* Keep a balanced width */
+  }
+
+    
