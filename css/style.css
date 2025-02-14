@@ -334,7 +334,7 @@ body[data-theme="dark"] .modal-content form {
 }
 /* Dark mode for service items */
 body[data-theme="dark"] #services-preview .service-item {
-  background: transparent;
+  background: #000; /* fully opaque black */
   border: 2px solid #bb86fc;
   color: #e0e0e0;
 }
