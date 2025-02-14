@@ -343,6 +343,7 @@ body[data-theme="dark"] #services-preview .service-item:hover {
   background-color: #7e69ab;
   color: #fff;
   border-color: #7e69ab;
+}
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   #services-preview .service-item {
