@@ -300,3 +300,51 @@ body[data-theme="dark"] .modal-content form {
     flex: 1 1 100%;
   }
 }
+/* Services preview container */
+#services-preview.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+/* Service items default appearance */
+#services-preview .service-item {
+  background: #fff;
+  border: 2px solid #9b87f5;
+  border-radius: 8px;
+  width: calc(25% - 1rem);
+  text-align: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  color: #333;
+}
+
+/* Hover effect for service items */
+#services-preview .service-item:hover {
+  background-color: #7e69ab;
+  color: #fff;
+  border-color: #7e69ab;
+}
+
+/* Dark mode for service items */
+body[data-theme="dark"] #services-preview .service-item {
+  background: #000;
+  border: 2px solid #bb86fc;
+  color: #e0e0e0;
+}
+
+/* Dark mode hover effect for service items */
+body[data-theme="dark"] #services-preview .service-item:hover {
+  background-color: #7e69ab;
+  color: #fff;
+  border-color: #7e69ab;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  #services-preview .service-item {
+    width: 100%;
+  }
+}
