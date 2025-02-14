@@ -343,17 +343,9 @@ body[data-theme="dark"] #services-preview .service-item:hover {
   background-color: #7e69ab;
   color: #fff;
   border-color: #7e69ab;
-}
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
-  /* Allow modal content to scroll */
-  .modal-content {
-    position: static;      /* Remove fixed positioning */
-    max-height: 90vh;       /* Limit height to 90% of the viewport */
-    overflow-y: auto;      /* Enable vertical scrolling */
-    margin: 1rem;          /* Add margin to prevent touching the edges */
-  }
-  /* Change overlay to absolute so it scrolls with the page */
-  .modal-overlay {
-    position: absolute;
+  #services-preview .service-item {
+    width: 80%;
   }
 }
