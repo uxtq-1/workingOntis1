@@ -231,9 +231,11 @@ footer {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
-.modal-content form button[type="submit"]:hover {
-  background-color: #7e69ab;
-  transform: scale(1.05);
+.modal-content form button[type="submit"] {
+  background-color: #7e69ab; /* Keep your color */
+  transform: scale(0.5); /* Reduce size to 50% */
+  display: block; /* Ensures centering works */
+  margin: 0 auto; /* Centers the button */
 }
 /* Dark mode settings */
 body[data-theme="dark"] {
