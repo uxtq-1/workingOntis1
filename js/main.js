@@ -100,30 +100,6 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
   });
-
-  // Dynamic content injection for Business Operations page
-  if(window.location.pathname.includes('business-operations.html')){
-    const businessContent = document.querySelector('#business-section');
-    if(businessContent){
-      businessContent.innerHTML = `
-        <h3 data-en="Optimize Your Business Processes" data-es="Optimiza tus Procesos Empresariales">Optimize Your Business Processes</h3>
-        <p data-en="Our business operations solutions include accounts payable, receivables, billing, and comprehensive workflow management designed to streamline your organization." data-es="Nuestras soluciones en operaciones empresariales incluyen cuentas por pagar, cuentas por cobrar, facturación y una gestión integral del flujo de trabajo para optimizar tu organización.">
-          Our business operations solutions include accounts payable, receivables, billing, and comprehensive workflow management designed to streamline your organization.
-        </p>
-        <button id="business-contact-btn" data-en="Contact Us" data-es="Contáctenos"></button>
-      `;
-      const businessContactBtn = document.getElementById('business-contact-btn');
-      businessContactBtn.textContent = businessContactBtn.getAttribute(currentLanguage === 'en' ? 'data-en' : 'data-es');
-      businessContactBtn.addEventListener('click', function(){
-        const contactModal = document.getElementById('contact-modal');
-        if(contactModal){
-          contactModal.classList.add('active');
-          contactModal.focus();
-        }
-      });
-    }
-  }
-
   // Register Service Worker
   if('serviceWorker' in navigator){
     window.addEventListener('load', function(){
