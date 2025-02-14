@@ -154,11 +154,12 @@ footer {
   display: flex;
 }
 .modal-content {
-  background-color: #7e69ab;
-  color: white;
+  /* Default (light) modal settings */
+  background-color: #f1f1f1;
+  color: #000;
   width: 80%; /* Adjust as needed */
   height: 90%; /* Adjust as needed */
-  max-width: 600px;
+  max-width: 800px;
   border-radius: 10px;
   padding: 1rem;
   position: relative;
@@ -231,20 +232,43 @@ footer {
   background-color: #7e69ab;
   transform: scale(1.05);
 }
-/* For light theme modals (default) */
-.modal-content {
-  background-color: #f1f1f1; /* Change to your desired light background color */
-  width: 80%;            /* Adjust width as needed */
-  max-width: 800px;      /* Adjust max width as needed */
-  /* other existing styles */
+
+/* Dark mode settings */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
 }
-/* For dark theme modals */
+body[data-theme="dark"] header {
+  background-color: #1c1c1c;
+}
+body[data-theme="dark"] header nav a {
+  color: #e0e0e0;
+}
+body[data-theme="dark"] .hero h2 {
+  color: #bb86fc;
+}
+body[data-theme="dark"] .hero p {
+  color: #e0e0e0;
+}
+body[data-theme="dark"] .floating-icon {
+  background-color: #bb86fc;
+}
+body[data-theme="dark"] .floating-icon:hover {
+  background-color: #7e69ab;
+}
+/* Dark mode modal content - pure black background */
 body[data-theme="dark"] .modal-content {
-  background-color: #333333; /* Change to your desired dark background color */
-  width: 80%;                /* Adjust width as needed */
-  max-width: 800px;          /* Adjust max width as needed */
-  /* other existing styles */
+  background-color: #000;
+  color: #e0e0e0;
+  width: 80%;
+  max-width: 800px;
 }
+/* Dark mode form inside modals - black background at 85% opacity */
+body[data-theme="dark"] .modal-content form {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Responsive styles */
 @media screen and (max-width: 768px) {
   header nav ul {
     flex-direction: column;
@@ -275,44 +299,4 @@ body[data-theme="dark"] .modal-content {
   .form-item {
     flex: 1 1 100%;
   }
-}
-body[data-theme="light"] .modal-content {
-  background-color: #fff;
-  color: #000;
-}
-body[data-theme="dark"] .modal-content {
-  background-color: #1c1c1c;
-  color: #e0e0e0;
-}
-body[data-theme="dark"] {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-body[data-theme="dark"] header {
-  background-color: #1c1c1c;
-}
-body[data-theme="dark"] header nav a {
-  color: #e0e0e0;
-}
-body[data-theme="dark"] .hero h2 {
-  color: #bb86fc;
-}
-body[data-theme="dark"] .hero p {
-  color: #e0e0e0;
-}
-body[data-theme="dark"] .floating-icon {
-  background-color: #bb86fc;
-}
-body[data-theme="dark"] .floating-icon:hover {
-  background-color: #7e69ab;
-}
-body[data-theme="dark"] .modal-content {
-  background-color: #1c1c1c;
-  color: #e0e0e0;
-}
-body[data-theme="dark"] .close-modal {
-  background-color: #7e69ab;
-}
-body[data-theme="dark"] .close-modal:hover {
-  background-color: #9b87f5;
 }
