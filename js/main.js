@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function(){
       localStorage.setItem('theme', 'light');
     }
   });
-
   // Language Toggle
   const languageToggleButton = document.getElementById('language-toggle');
   let currentLanguage = localStorage.getItem('language') || 'en';
