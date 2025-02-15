@@ -8,7 +8,9 @@ const CACHE_URLS = [
   '/contact-center.html',
   '/it-support.html',
   '/professionals.html',
-  '/css/style.css',
+  '/css/style.css',        // Adjust if needed
+  '/css/global.css',       // Make sure these match your file paths
+  '/css/small-screens.css',
   '/js/main.js',
   '/manifest.json',
   '/assets/images/hero-image.jpg',
