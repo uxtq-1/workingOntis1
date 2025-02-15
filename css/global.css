@@ -1,17 +1,4 @@
 /* ==================================================================
-   Big Screens Default Layout
-   ================================================================== */
-/* Default layout for big screens */
-.modal-body form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.form-item {
-  flex: 1 1 calc(50% - 1rem);
-}
-/* ==================================================================
    Global Reset & Basic Body Styles
    ================================================================== */
 * {
@@ -173,121 +160,104 @@ footer {
 /* ==================================================================
    Modal Overlay & Content
    ================================================================== */
-/* Modal Overlay covers the viewport and is hidden by default */
 .modal-overlay {
-  display: none; /* Hidden initially */
+  display: none; /* Hidden by default */
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
   z-index: 3000;
-  flex-direction: row; /* Horizontal layout by default */
+  flex-direction: column;
 }
 .modal-overlay.active {
   display: flex;
 }
-/* Responsive: For small screens, use vertical layout */
-@media (max-width: 768px) {
-  .modal-overlay {
-    flex-direction: column;
-  }
-}
-/* Modal Content Container */
 .modal-content {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  background-color: #fff;
   border-radius: 10px;
   width: 90%;
   max-width: 800px;
   max-height: 90vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 1rem;
-}
-/* Close Button (positioned inside modal-content) */
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #9b87f5;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  z-index: 100;
-}
-.close-modal:hover {
-  background-color: #7e69ab;
-}
-/* Modal Body: scrollable if content overflows */
-.modal-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
-}
-/* Modal Footer (optional) */
-.modal-footer {
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
+  overflow: hidden;
 }
 /* ==================================================================
-   Modal Form & Form Elements
+   Modal Header (Title and Close Button)
    ================================================================== */
-.modal-body form {
+.modal-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #9b87f5;
+  padding: 1rem;
+  color: #fff;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.close-modal {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close-modal:hover {
+  color: #ddd;
+}
+/* ==================================================================
+   Modal Body & Form Layout (Grid: Table-like)
+   ================================================================== */
+.modal-body {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+/* Use CSS Grid for a two-column layout on big screens */
+.modal-body form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.form-item {
+.form-cell {
   display: flex;
   flex-direction: column;
 }
-.form-item label {
-  font-size: 1rem;
+.form-cell label {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-.form-item input,
-.form-item textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
+.form-cell input,
+.form-cell textarea {
+  padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
-  color: #333;
-  transition: border-color 0.3s, background-color 0.3s;
 }
-.form-item input:focus,
-.form-item textarea:focus {
-  border-color: #9b87f5;
-  background-color: #fff;
-  outline: none;
+/* ==================================================================
+   Modal Footer: Submit Button Aligned Right
+   ================================================================== */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #eee;
 }
-/* Submit Button inside the form */
-.modal-body form button[type="submit"] {
+.submit-button {
   background-color: #9b87f5;
-  color: white;
-  padding: 10px 15px;
+  color: #fff;
   border: none;
+  padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  align-self: flex-start;
-  margin-top: 1rem;
+  transition: background-color 0.3s;
 }
-.modal-body form button[type="submit"]:hover {
+.submit-button:hover {
   background-color: #7e69ab;
-  transform: scale(1.05);
 }
 /* ==================================================================
    Dark Mode Overrides
@@ -322,16 +292,16 @@ body[data-theme="dark"] .modal-content {
   color: #e0e0e0;
 }
 body[data-theme="dark"] .modal-content form {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0,0,0,0.85);
 }
 /* ==================================================================
-   Responsive Adjustments
+   Responsive Adjustments for Small Screens
    ================================================================== */
 @media screen and (max-width: 768px) {
   header nav ul {
     flex-direction: column;
     gap: 10px;
-  }
+  } 
   .hero h2 {
     font-size: 2rem;
   }
@@ -352,72 +322,8 @@ body[data-theme="dark"] .modal-content form {
     max-width: 95%;
     height: 90vh;
   }
+  /* On small screens, switch form layout to single column */
   .modal-body form {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
-  .form-item {
-    flex: 1 1 100%;
-  }
-}
-@media (min-width: 1024px) {
-  /* For big screens, rearrange modal content into two columns */
-  .modal-content {
-    flex-direction: row;
-    padding: 2rem;
-  }
-  .modal-body form {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    width: 100%;
-  }
-  .form-item {
-    flex: 1 1 calc(50% - 1.5rem);
-  }
-  .form-item.full-width {
-    flex: 1 1 100%;
-  }
-  .modal-body form button[type="submit"] {
-    width: auto;
-  }
-}
-/* ==================================================================
-   Services Preview (Optional)
-   ================================================================== */
-#services-preview.services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-}
-#services-preview .service-item {
-  background: #fff;
-  border: 2px solid #9b87f5;
-  border-radius: 8px;
-  width: calc(23% - 1rem);
-  text-align: center;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  color: #333;
-}
-#services-preview .service-item h3,
-#services-preview .service-item p,
-#services-preview .service-item .btn {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-#services-preview .service-item:hover {
-  background-color: #7e69ab;
-  color: #fff;
-  border-color: #7e69ab;
-}
-body[data-theme="dark"] #services-preview .service-item {
-  background: #000;
-  border: 2px solid #bb86fc;
-  color: #e0e0e0;
-}
-body[data-theme="dark"] #services-preview .service-item:hover {
-  background-color: #7e69ab;
-  color: #fff;
-  border-color: #7e69ab;
 }
