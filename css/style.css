@@ -1,4 +1,6 @@
-/* Global Styles */
+/* ==================================================================
+   Global Reset & Basic Body Styles
+   ================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +11,12 @@ body {
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
   padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
-/* Header and Navigation */
+/* ==================================================================
+   Header & Navigation
+   ================================================================== */
 header {
   background-color: #9b87f5;
   color: white;
@@ -51,7 +55,9 @@ header nav a {
 .toggle-container button:hover {
   background-color: #9b87f5;
 }
-/* Hero Section */
+/* ==================================================================
+   Hero Section
+   ================================================================== */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -71,7 +77,9 @@ header nav a {
   margin-top: 2rem;
   border-radius: 10px;
 }
-/* Services Section */
+/* ==================================================================
+   Services Section
+   ================================================================== */
 .services {
   padding: 2rem;
   background-color: #f1f0fb;
@@ -109,7 +117,9 @@ header nav a {
 .service-item .btn:hover {
   background-color: #7e69ab;
 }
-/* Footer */
+/* ==================================================================
+   Footer
+   ================================================================== */
 footer {
   background-color: #7e69ab;
   color: white;
@@ -117,13 +127,15 @@ footer {
   text-align: center;
   margin-top: 2rem;
 }
-/* Floating Icons */
+/* ==================================================================
+   Floating Icons
+   ================================================================== */
 .floating-icons {
   position: fixed;
   bottom: 80px;
   right: 20px;
   display: flex;
-  flex-direction: column; /* Stacks icons vertically */
+  flex-direction: column;
   gap: 1rem;
   z-index: 2000;
 }
@@ -145,56 +157,48 @@ footer {
   background-color: #7e69ab;
   transform: scale(1.1);
 }
-/* Modal Overlay and Content */
+/* ==================================================================
+   Modal Overlay & Content
+   ================================================================== */
+/* Modal Overlay covers the viewport and is hidden by default */
 .modal-overlay {
-  display: none;
+  display: none; /* Hidden initially */
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
   z-index: 3000;
-  flex-direction: row; /* Default horizontal layout for big screens */
+  flex-direction: row; /* Horizontal layout by default */
 }
-
-.modal-overlay.dark {
-  background-color: #333;
-}
-
-.modal-overlay.light {
-  background-color: #fff;
-}
-
 .modal-overlay.active {
   display: flex;
 }
-
-/* For small screens: switch to vertical layout */
+/* Responsive: For small screens, use vertical layout */
 @media (max-width: 768px) {
   .modal-overlay {
     flex-direction: column;
   }
 }
-
-/* Modal Container */
+/* Modal Content Container */
 .modal-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 90%;            /* Adjust as needed */
-  max-width: 800px;
-  border-radius: 10px;
-  padding: 0;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.8); /* Example background */
-  color: #fff;
+  padding: 1rem;
 }
-/* Header with the Close Button */
-.modal-header {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: flex-end;
-}
+/* Close Button (positioned inside modal-content) */
 .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   background-color: #9b87f5;
   color: white;
   border: none;
@@ -204,27 +208,34 @@ footer {
   font-size: 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  z-index: 100;
 }
 .close-modal:hover {
   background-color: #7e69ab;
 }
-/* Scrollable Modal Body for the Form */
+/* Modal Body: scrollable if content overflows */
 .modal-body {
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
 }
-/* Modal Footer with Send Button */
+/* Modal Footer (optional) */
 .modal-footer {
   padding: 1rem;
   display: flex;
   justify-content: flex-start;
 }
-/* Form Elements */
+/* ==================================================================
+   Modal Form & Form Elements
+   ================================================================== */
 .modal-body form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
 }
 .form-item label {
   font-size: 1rem;
@@ -248,14 +259,8 @@ footer {
   background-color: #fff;
   outline: none;
 }
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-  .modal-content {
-    height: 90vh;
-    max-width: 95%;
-  }
-}
-.modal-content form button[type="submit"] {
+/* Submit Button inside the form */
+.modal-body form button[type="submit"] {
   background-color: #9b87f5;
   color: white;
   padding: 10px 15px;
@@ -264,12 +269,16 @@ footer {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  display: inline-block;
-  width: 45%;
+  align-self: flex-start;
   margin-top: 1rem;
-  margin-left: 0;
 }
-/* Dark Mode */
+.modal-body form button[type="submit"]:hover {
+  background-color: #7e69ab;
+  transform: scale(1.05);
+}
+/* ==================================================================
+   Dark Mode Overrides
+   ================================================================== */
 body[data-theme="dark"] {
   background-color: #121212;
   color: #e0e0e0;
@@ -287,7 +296,7 @@ body[data-theme="dark"] .hero p {
   color: #e0e0e0;
 }
 body[data-theme="dark"] .services {
-  background-color: #121212; /* Or set it to a dark color, e.g., #121212 */
+  background-color: #121212;
 }
 body[data-theme="dark"] .floating-icon {
   background-color: #bb86fc;
@@ -302,7 +311,9 @@ body[data-theme="dark"] .modal-content {
 body[data-theme="dark"] .modal-content form {
   background-color: rgba(0, 0, 0, 0.85);
 }
-/* Responsive Styles */
+/* ==================================================================
+   Responsive Adjustments
+   ================================================================== */
 @media screen and (max-width: 768px) {
   header nav ul {
     flex-direction: column;
@@ -318,7 +329,6 @@ body[data-theme="dark"] .modal-content form {
     bottom: 20px;
     right: 10px;
   }
-
   .floating-icon {
     width: 50px;
     height: 50px;
@@ -326,9 +336,10 @@ body[data-theme="dark"] .modal-content form {
   }
   .modal-content {
     padding: 2rem;
-    max-width: 90%;
+    max-width: 95%;
+    height: 90vh;
   }
-  .modal-content form {
+  .modal-body form {
     flex-direction: column;
   }
   .form-item {
@@ -336,13 +347,30 @@ body[data-theme="dark"] .modal-content form {
   }
 }
 @media (min-width: 1024px) {
-  .modal-content form {
-    height: calc(100% + 125px);
-    max-height: none;
-    width: 50%;
+  /* For big screens, rearrange modal content into two columns */
+  .modal-content {
+    flex-direction: row;
+    padding: 2rem;
+  }
+  .modal-body form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .form-item {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+  .form-item.full-width {
+    flex: 1 1 100%;
+  }
+  .modal-body form button[type="submit"] {
+    width: auto;
   }
 }
-/* Services Preview */
+/* ==================================================================
+   Services Preview (Optional)
+   ================================================================== */
 #services-preview.services {
   display: flex;
   flex-wrap: wrap;
