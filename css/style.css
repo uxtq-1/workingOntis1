@@ -135,7 +135,7 @@ footer {
   bottom: 80px;
   right: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: collumn;
   gap: 1rem;
   z-index: 2000;
 }
@@ -355,7 +355,7 @@ body[data-theme="dark"] .modal-content form {
   .modal-body form {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: .75rem;
     width: 100%;
   }
   .form-item {
