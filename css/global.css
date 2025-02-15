@@ -302,6 +302,21 @@ body[data-theme="dark"] .modal-content form {
     flex-direction: column;
     gap: 10px;
   } 
+  @media screen and (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* New rules to stack service items vertically */
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-item {
+    width: 100%;  /* Full width for each service item */
+    margin-bottom: 1rem;  /* Optional: spacing between items */
+  }
+}
   .hero h2 {
     font-size: 2rem;
   }
