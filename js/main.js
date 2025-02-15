@@ -117,8 +117,7 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener("DOMContentLoaded", function() {
   var servicesToggle = document.getElementById("services-toggle");
   var mobileServicesMenu = document.getElementById("mobile-services-menu");
-
-  servicesToggle.addEventListener("click", function() {
+    servicesToggle.addEventListener("click", function() {
     mobileServicesMenu.classList.toggle("active");
   });
 });
