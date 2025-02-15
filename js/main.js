@@ -114,3 +114,13 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log('Service workers are not supported in this browser.');
   }
 });
+document.addEventListener("DOMContentLoaded", function() {
+  var servicesToggle = document.getElementById("services-toggle");
+  var mobileServicesMenu = document.getElementById("mobile-services-menu");
+
+  servicesToggle.addEventListener("click", function() {
+    mobileServicesMenu.classList.toggle("active");
+  });
+});
+
+
