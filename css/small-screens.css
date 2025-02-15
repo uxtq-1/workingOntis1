@@ -1,0 +1,7 @@
+/* Override for small screens */
+.modal-body form {
+  flex-direction: column;
+}
+.form-item {
+  flex: 1 1 100%;
+}
