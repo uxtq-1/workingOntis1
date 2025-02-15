@@ -5,3 +5,13 @@
 .form-item {
   flex: 1 1 100%;
 }
+@media screen and (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center; /* Center items if desired */
+  }
+  .service-item {
+    width: 100%; /* Make each item take the full width */
+    margin-bottom: 1rem; /* Optional: add some spacing between items */
+  }
+}
