@@ -297,6 +297,12 @@ body[data-theme="dark"] .modal-content form {
 /* ==================================================================
    Responsive Adjustments for Small Screens
    ================================================================== */
+@media screen and (min-width: 769px) {
+  .mobile-nav,
+  .mobile-services-menu {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   header nav ul {
     flex-direction: column;
