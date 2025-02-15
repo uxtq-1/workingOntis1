@@ -349,11 +349,11 @@ body[data-theme="dark"] .modal-content form {
 @media (min-width: 1024px) {
   /* For big screens, rearrange modal content into two columns */
   .modal-content {
-    flex-direction: row;
+    flex-direction: column;
     padding: 2rem;
   }
   .modal-body form {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 1.5rem;
     width: 100%;
