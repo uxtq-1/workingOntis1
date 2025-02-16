@@ -1,3 +1,27 @@
+/* Hide the top nav and top toggles on mobile */
+@media screen and (max-width: 768px) {
+  header nav ul {
+    display: none; /* No desktop menu */
+  }
+  .toggle-container {
+    display: none; /* Hide top toggles on mobile */
+  }
+  .mobile-nav {
+    display: flex; /* Show the mobile nav */
+    /* position, bottom, z-index, etc., as needed */
+  }
+}
+
+/* 
+   For big screens, the mobile nav is hidden (or not displayed at all).
+   This might already be in your global.css:
+*/
+@media screen and (min-width: 769px) {
+  .mobile-nav {
+    display: none; 
+  }
+}
+
 @media screen and (max-width: 768px) {
   /* Stack nav links vertically */
   header nav ul {
