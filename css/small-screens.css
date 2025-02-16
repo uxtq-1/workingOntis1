@@ -23,16 +23,31 @@
     margin-bottom: 1rem;
   }
     @media screen and (max-width: 768px) {
-    .floating-icons {
-     bottom: 140px;
-     right: 10px;
-    }
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    /* Give the nav a higher z-index only on small screens */
+    z-index: 3000;
   }
-  /* Floating icons smaller on mobile */
-  .floating-icons {
-    bottom: 100px;
-    right: 10px;
   }
+ .floating-icons {
+    position: fixed;
+    bottom: 120px; /* adjust if needed */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Lower z-index so the nav appears on top */
+    z-index: 2000;
+  }
+}
   .floating-icon {
     width: 50px;
     height: 50px;
