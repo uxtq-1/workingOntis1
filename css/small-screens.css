@@ -74,11 +74,11 @@
   /* Modal size adjustments */
   .modal-content {
     max-width: 95%;
-    height: 90vh;
+    height: 85vh;
   }
   .modal-body form {
     grid-template-columns: 1fr;
-  }
+   }
 
   /* Mobile Services Menu */
   .mobile-services-menu {
