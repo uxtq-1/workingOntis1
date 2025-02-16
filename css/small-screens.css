@@ -24,13 +24,13 @@
   }
     @media screen and (max-width: 768px) {
     .floating-icons {
-     bottom: 150px;
+     bottom: 160px;
      right: 10px;
     }
   }
   /* Floating icons smaller on mobile */
   .floating-icons {
-    bottom: 80px;
+    bottom: 100px;
     right: 10px;
   }
   .floating-icon {
