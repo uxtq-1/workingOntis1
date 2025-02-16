@@ -24,7 +24,7 @@
   }
     @media screen and (max-width: 768px) {
     .floating-icons {
-     bottom: 120px;
+     bottom: 150px;
      right: 10px;
     }
   }
