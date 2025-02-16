@@ -151,7 +151,7 @@ footer {
    ================================================================== */
 .floating-icons {
   position: fixed;
-  bottom: 130px;
+  bottom: 110px;
   right: 20px;
   display: flex;
   flex-direction: column;
