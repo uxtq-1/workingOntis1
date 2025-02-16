@@ -22,10 +22,15 @@
     width: 100%;
     margin-bottom: 1rem;
   }
-
+    @media screen and (max-width: 768px) {
+    .floating-icons {
+     bottom: 120px;
+     right: 10px;
+    }
+  }
   /* Floating icons smaller on mobile */
   .floating-icons {
-    bottom: 20px;
+    bottom: 40px;
     right: 10px;
   }
   .floating-icon {
