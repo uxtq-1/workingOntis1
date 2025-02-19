@@ -147,6 +147,74 @@ footer {
 }
 
 /* ==================================================================
+   Particles Effects
+   ================================================================== */
+/* particles.js container setup */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Makes sure it stays in the background */
+}
+
+/* Text container */
+#typewriter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid white;
+  animation: blinkCursor 0.8s infinite;
+  z-index: 10;
+  color: white;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* Button and language toggle styling */
+#language-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#click-to-continue {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #00ffff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  animation: fadeIn 2s;
+}
+
+#click-to-continue:hover {
+  background-color: #7e69ab;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==================================================================
    Floating Icons
    ================================================================== */
 .floating-icons {
