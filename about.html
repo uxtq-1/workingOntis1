@@ -19,6 +19,33 @@
   <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
+ <!-- ==================================================================
+       JavaScript: Particles Functionality & Reference Link to file js
+       ================================================================== -->
+<!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Typewriter Text -->
+  <div id="typewriter">Welcome to your Future Growth with Remote Assistance</div>
+
+  <!-- Language Toggle -->
+  <button id="language-toggle" style="position: absolute; top: 10px; right: 10px;">EN/ES</button>
+
+  <!-- Click to Continue -->
+  <button id="click-to-continue" onclick="window.location.href='landing-page.html'">Click to Continue</button>
+
+  <!-- Existing Content -->
+  <div id="content">
+    <!-- Your existing content goes here -->
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js"></script>
+
+  <!-- Additional JS for functionality (theme, language, etc.) -->
+  <script src="js/main.js"></script>
+  
   <!-- ==================================================================
        Header Section: Navigation & Toggle Buttons (Desktop Only)
        ================================================================== -->
@@ -32,12 +59,10 @@
         <li><a href="professionals.html" data-en="Professionals" data-es="Profesionales">Professionals</a></li>
       </ul>
     </nav>
-    <!-- REMOVE or comment out if you only want toggles in the mobile nav
-    <div class="toggle-container">
+   <div class="toggle-container">
       <button id="theme-toggle"></button>
       <button id="language-toggle"></button>
     </div>
-    -->
   </header>
 
   <section class="hero">
@@ -215,11 +240,6 @@
       <li><a href="professionals.html">Professionals</a></li>
     </ul>
   </div>
-      <!-- ==================================================================
-       JavaScript: Particles Functionality & Reference Link to file js
-       ================================================================== -->
-  <script src="path/to/particles.js"></script>
-  <script src="js/particles-config.js"></script>
     <!-- ==================================================================
        JavaScript: Main Functionality & Mobile Menu Toggle
        ================================================================== -->
