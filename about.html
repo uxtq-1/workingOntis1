@@ -1,54 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ==================================================================
-       Document Metadata & External Resources
-       ================================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OPS Solutions Services</title>
-  <!-- Global CSS (Desktop-First) -->
+  <title>About - OPS Solutions Services</title>
+  <!-- Global CSS for big screens -->
   <link rel="stylesheet" href="css/global.css">
   <!-- Additional overrides for small screens -->
   <link rel="stylesheet" media="(max-width: 768px)" href="css/small-screens.css">
   <!-- Font Awesome Stylesheet -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
- <!-- ==================================================================
-       JavaScript: Particles Functionality & Reference Link to file js
-       ================================================================== -->
-<!-- Particles Background -->
-  <div id="particles-js"></div>
-
-  <!-- Typewriter Text -->
-  <div id="typewriter">Welcome to your Future Growth with Remote Assistance</div>
-
-  <!-- Language Toggle -->
-  <button id="language-toggle" style="position: absolute; top: 10px; right: 10px;">EN/ES</button>
-
-  <!-- Click to Continue -->
-  <button id="click-to-continue" onclick="window.location.href='landing-page.html'">Click to Continue</button>
-
-  <!-- Existing Content -->
-  <div id="content">
-    <!-- Your existing content goes here -->
-  </div>
-
-  <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/particles-config.js"></script>
-
-  <!-- Additional JS for functionality (theme, language, etc.) -->
-  <script src="js/main.js"></script>
-  
-  <!-- ==================================================================
-       Header Section: Navigation & Toggle Buttons (Desktop Only)
-       ================================================================== -->
   <header>
     <nav>
       <ul>
@@ -59,12 +24,11 @@
         <li><a href="professionals.html" data-en="Professionals" data-es="Profesionales">Professionals</a></li>
       </ul>
     </nav>
-   <div class="toggle-container">
+    <div class="toggle-container">
       <button id="theme-toggle"></button>
       <button id="language-toggle"></button>
     </div>
   </header>
-
   <section class="hero">
     <h2 data-en="About Us" data-es="Sobre Nosotros">About Us</h2>
     <p data-en="Learn more about our mission and values." data-es="Conoce más sobre nuestra misión y valores.">
@@ -75,9 +39,7 @@
     <footer>
     <p>&copy; 2025 OPS Solutions Services. All rights reserved.</p>
   </footer> 
-  <!-- ==================================================================
-       Floating Icons (Triggers for Modals)
-       ================================================================== -->
+  <!-- Floating Icons -->
   <div class="floating-icons">
     <button class="floating-icon" data-modal="join-modal" aria-label="Join Us" tabindex="0">
       <i class="fas fa-user-plus"></i>
@@ -85,22 +47,19 @@
     <button class="floating-icon" data-modal="contact-modal" aria-label="Contact Us" tabindex="0">
       <i class="fas fa-envelope-open-text"></i>
     </button>
-  </div>
-
-  <!-- ==================================================================
-       Join Modal
-       ================================================================== -->
+  </div>  
+  <!-- Join Modal -->
   <div id="join-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
     <div class="modal-content">
-      <!-- Modal Header: Title & Close Button -->
+      <!-- Header Row -->
       <div class="modal-header">
         <h3 id="joinModalTitle" data-en="Join Us" data-es="Únete a Nosotros">Join Us</h3>
         <button class="close-modal" data-close aria-label="Close">&times;</button>
       </div>
-      <!-- Modal Body: Form with Grid (Table-like) Layout -->
+      <!-- Body Row: Table-like Form -->
       <div class="modal-body">
         <form id="join-form">
-          <!-- Row 1 -->
+          <!-- First row of inputs -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-name" data-en="Name" data-es="Nombre">Name</label>
@@ -111,7 +70,7 @@
               <input type="email" id="join-email" placeholder="Enter your email" required>
             </div>
           </div>
-          <!-- Row 2 -->
+          <!-- Second row of inputs -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-contact" data-en="Contact Number" data-es="Número de Contacto">Contact Number</label>
@@ -122,7 +81,7 @@
               <input type="date" id="join-date" required>
             </div>
           </div>
-          <!-- Row 3 -->
+          <!-- Additional row for more inputs -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-time" data-en="Time" data-es="Hora">Time</label>
@@ -133,7 +92,6 @@
               <input type="file" id="join-resume" accept=".pdf,.doc,.docx" required>
             </div>
           </div>
-          <!-- Row 4 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-cover" data-en="Upload Your Cover Letter" data-es="Sube tu Carta de Presentación">Upload Your Cover Letter</label>
@@ -146,27 +104,24 @@
           </div>
         </form>
       </div>
-      <!-- Modal Footer: Submit Button -->
+      <!-- Footer Row: Submit Button -->
       <div class="modal-footer">
         <button type="submit" form="join-form" class="submit-button" data-en="Submit" data-es="Enviar">Submit</button>
       </div>
     </div>
   </div>
-
-  <!-- ==================================================================
-       Contact Modal
-       ================================================================== -->
+  <!-- Contact Modal -->
   <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
     <div class="modal-content">
-      <!-- Modal Header: Title & Close Button -->
+      <!-- Header Row -->
       <div class="modal-header">
         <h3 id="contactModalTitle" data-en="Contact Us" data-es="Contáctenos">Contact Us</h3>
         <button class="close-modal" data-close aria-label="Close">&times;</button>
       </div>
-      <!-- Modal Body: Form with Grid (Table-like) Layout -->
+      <!-- Body Row: Table-like Form -->
       <div class="modal-body">
         <form id="contact-form">
-          <!-- Row 1 -->
+          <!-- First row of inputs -->
           <div class="form-row">
             <div class="form-cell">
               <label for="contact-name" data-en="Name" data-es="Nombre">Name</label>
@@ -177,7 +132,7 @@
               <input type="email" id="contact-email" placeholder="Enter your email" required>
             </div>
           </div>
-          <!-- Row 2 -->
+          <!-- Second row of inputs -->
           <div class="form-row">
             <div class="form-cell">
               <label for="contact-number" data-en="Contact Number" data-es="Número de Contacto">Contact Number</label>
@@ -188,7 +143,6 @@
               <input type="date" id="contact-date" required>
             </div>
           </div>
-          <!-- Row 3 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="contact-time" data-en="Preferred Time" data-es="Hora Preferida">Preferred Time</label>
@@ -201,48 +155,12 @@
           </div>
         </form>
       </div>
-      <!-- Modal Footer: Submit Button -->
+      <!-- Footer Row: Submit Button -->
       <div class="modal-footer">
         <button type="submit" form="contact-form" class="submit-button" data-en="Send" data-es="Enviar">Send</button>
       </div>
     </div>
-  </div>
-
-  <!-- ==================================================================
-       Mobile Bottom Navigation & Services Menu (Small Screens)
-       ================================================================== -->
-  <!-- Mobile Bottom Navigation Bar -->
-  <nav class="mobile-nav">
-    <a href="index.html" class="mobile-nav-item">
-      <i class="fas fa-home"></i>
-      <span>Home</span>
-    </a>
-    <button class="mobile-nav-item" id="services-toggle">
-      <i class="fas fa-bars"></i>
-      <span>Services</span>
-    </button>
-    <!-- Language Toggle -->
-    <button class="mobile-nav-item" id="language-toggle">EN/ES</button>
-    <!-- Theme Toggle -->
-    <button class="mobile-nav-item" id="theme-toggle">Dark/Light</button>
-    <a href="#" class="mobile-nav-item">
-      <i class="fas fa-comment-alt"></i>
-      <span>Chat</span>
-    </a>
-  </nav>
-
-  <!-- Hidden Mobile Services Menu -->
-  <div class="mobile-services-menu" id="mobile-services-menu">
-    <ul>
-      <li><a href="business-operations.html">Business Operations</a></li>
-      <li><a href="contact-center.html">Contact Center</a></li>
-      <li><a href="it-support.html">IT Support</a></li>
-      <li><a href="professionals.html">Professionals</a></li>
-    </ul>
-  </div>
-    <!-- ==================================================================
-       JavaScript: Main Functionality & Mobile Menu Toggle
-       ================================================================== -->
+  </div> 
   <script src="js/main.js"></script>
 </body>
 </html>
