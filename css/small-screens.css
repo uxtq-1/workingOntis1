@@ -1,12 +1,12 @@
 /* =========================================================
    All mobile overrides for screens ≤ 768px
    ========================================================= */
-@media screen and (max-width: 768px) {
-
-  /* Hide desktop nav + toggles on mobile */
-  header nav ul {
+@media screen and (min-width: 769px) {
+  .mobile-nav,
+  .mobile-services-menu {
     display: none;
   }
+}
   .toggle-container {
     display: none;
   }
