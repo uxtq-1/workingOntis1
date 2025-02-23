@@ -23,7 +23,7 @@
        Header Section: Navigation & Toggle Buttons (Desktop Only)
        ================================================================== -->
   <header>
-    <nav>
+    <nav class="desktop-nav">
       <ul>
         <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
         <li><a href="business-operations.html" data-en="Business Operations" data-es="Operaciones Empresariales">Business Operations</a></li>
@@ -32,9 +32,9 @@
         <li><a href="professionals.html" data-en="Professionals" data-es="Profesionales">Professionals</a></li>
       </ul>
     </nav>
-     <div class="toggle-container">
-      <button id="theme-toggle"></button>
-      <button id="language-toggle"></button>
+    <div class="toggle-container desktop-only">
+      <button id="desktop-theme-toggle" aria-label="Toggle Theme">Light/Dark</button>
+      <button id="desktop-language-toggle" aria-label="Toggle Language">EN/ES</button>
     </div>
   </header>
 
@@ -95,7 +95,7 @@
   <!-- ==================================================================
        Floating Icons (Triggers for Modals)
        ================================================================== -->
-  <div class="floating-icons">
+  <div class="floating-icons desktop-only">
     <button class="floating-icon" data-modal="join-modal" aria-label="Join Us" tabindex="0">
       <i class="fas fa-user-plus"></i>
     </button>
@@ -105,19 +105,38 @@
   </div>
 
   <!-- ==================================================================
+       Chatbot Modal (Common for Desktop & Mobile)
+       ================================================================== -->
+  <div id="chat-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="chatModalTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="chatModalTitle" data-en="Chatbot" data-es="Chatbot">Chatbot</h3>
+        <button class="close-modal" data-close aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Here you can integrate your Chatbot/Chatbot AI widget -->
+        <p data-en="Chat with our AI assistant." data-es="Chatea con nuestro asistente AI.">
+          Chat with our AI assistant.
+        </p>
+        <!-- Example Chatbot container -->
+        <div id="chatbot-container">
+          <!-- Chatbot integration code goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================
        Join Modal
        ================================================================== -->
   <div id="join-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
     <div class="modal-content">
-      <!-- Modal Header: Title & Close Button -->
       <div class="modal-header">
         <h3 id="joinModalTitle" data-en="Join Us" data-es="Únete a Nosotros">Join Us</h3>
         <button class="close-modal" data-close aria-label="Close">&times;</button>
       </div>
-      <!-- Modal Body: Form with Grid (Table-like) Layout -->
       <div class="modal-body">
         <form id="join-form">
-          <!-- Row 1 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-name" data-en="Name" data-es="Nombre">Name</label>
@@ -128,7 +147,6 @@
               <input type="email" id="join-email" placeholder="Enter your email" required>
             </div>
           </div>
-          <!-- Row 2 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-contact" data-en="Contact Number" data-es="Número de Contacto">Contact Number</label>
@@ -139,7 +157,6 @@
               <input type="date" id="join-date" required>
             </div>
           </div>
-          <!-- Row 3 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-time" data-en="Time" data-es="Hora">Time</label>
@@ -150,7 +167,6 @@
               <input type="file" id="join-resume" accept=".pdf,.doc,.docx" required>
             </div>
           </div>
-          <!-- Row 4 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="join-cover" data-en="Upload Your Cover Letter" data-es="Sube tu Carta de Presentación">Upload Your Cover Letter</label>
@@ -163,7 +179,6 @@
           </div>
         </form>
       </div>
-      <!-- Modal Footer: Submit Button -->
       <div class="modal-footer">
         <button type="submit" form="join-form" class="submit-button" data-en="Submit" data-es="Enviar">Submit</button>
       </div>
@@ -175,15 +190,12 @@
        ================================================================== -->
   <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
     <div class="modal-content">
-      <!-- Modal Header: Title & Close Button -->
       <div class="modal-header">
         <h3 id="contactModalTitle" data-en="Contact Us" data-es="Contáctenos">Contact Us</h3>
         <button class="close-modal" data-close aria-label="Close">&times;</button>
       </div>
-      <!-- Modal Body: Form with Grid (Table-like) Layout -->
       <div class="modal-body">
         <form id="contact-form">
-          <!-- Row 1 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="contact-name" data-en="Name" data-es="Nombre">Name</label>
@@ -194,7 +206,6 @@
               <input type="email" id="contact-email" placeholder="Enter your email" required>
             </div>
           </div>
-          <!-- Row 2 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="contact-number" data-en="Contact Number" data-es="Número de Contacto">Contact Number</label>
@@ -205,7 +216,6 @@
               <input type="date" id="contact-date" required>
             </div>
           </div>
-          <!-- Row 3 -->
           <div class="form-row">
             <div class="form-cell">
               <label for="contact-time" data-en="Preferred Time" data-es="Hora Preferida">Preferred Time</label>
@@ -218,7 +228,6 @@
           </div>
         </form>
       </div>
-      <!-- Modal Footer: Submit Button -->
       <div class="modal-footer">
         <button type="submit" form="contact-form" class="submit-button" data-en="Send" data-es="Enviar">Send</button>
       </div>
@@ -228,8 +237,7 @@
   <!-- ==================================================================
        Mobile Bottom Navigation & Services Menu (Small Screens)
        ================================================================== -->
-  <!-- Mobile Bottom Navigation Bar -->
-  <nav class="mobile-nav">
+  <nav class="mobile-nav mobile-only">
     <a href="index.html" class="mobile-nav-item">
       <i class="fas fa-home"></i>
       <span>Home</span>
@@ -238,18 +246,16 @@
       <i class="fas fa-bars"></i>
       <span>Services</span>
     </button>
-    <!-- Language Toggle -->
-    <button class="mobile-nav-item" id="language-toggle">EN/ES</button>
-    <!-- Theme Toggle -->
-    <button class="mobile-nav-item" id="theme-toggle">Dark/Light</button>
-    <a href="#" class="mobile-nav-item">
+    <button class="mobile-nav-item" id="mobile-language-toggle">EN/ES</button>
+    <button class="mobile-nav-item" id="mobile-theme-toggle">Light/Dark</button>
+    <button class="mobile-nav-item" id="mobile-chat-toggle">
       <i class="fas fa-comment-alt"></i>
       <span>Chat</span>
-    </a>
+    </button>
   </nav>
 
   <!-- Hidden Mobile Services Menu -->
-  <div class="mobile-services-menu" id="mobile-services-menu">
+  <div class="mobile-services-menu mobile-only" id="mobile-services-menu">
     <ul>
       <li><a href="business-operations.html">Business Operations</a></li>
       <li><a href="contact-center.html">Contact Center</a></li>
@@ -263,5 +269,55 @@
        ================================================================== -->
   <script src="js/main.js"></script>
   <script src="js/service-worker.js"></script>
+  <script>
+    // Example JavaScript to handle toggles and modal popups
+
+    // Desktop toggles
+    document.getElementById('desktop-language-toggle').addEventListener('click', function() {
+      // Toggle language between EN and ES (update text content using data attributes)
+      toggleLanguage();
+    });
+    document.getElementById('desktop-theme-toggle').addEventListener('click', function() {
+      // Toggle theme between Light and Dark
+      toggleTheme();
+    });
+
+    // Mobile toggles
+    document.getElementById('mobile-language-toggle').addEventListener('click', function() {
+      toggleLanguage();
+    });
+    document.getElementById('mobile-theme-toggle').addEventListener('click', function() {
+      toggleTheme();
+    });
+    document.getElementById('mobile-chat-toggle').addEventListener('click', function() {
+      // Open chatbot modal
+      openModal('chat-modal');
+    });
+    document.getElementById('services-toggle').addEventListener('click', function() {
+      // Toggle mobile services menu
+      document.getElementById('mobile-services-menu').classList.toggle('active');
+    });
+
+    // Modal close functionality
+    document.querySelectorAll('.close-modal').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        this.closest('.modal-overlay').classList.remove('active');
+      });
+    });
+
+    // Dummy functions for toggles
+    function toggleLanguage() {
+      // Here, implement language switching logic (e.g., iterating over elements with data attributes)
+      console.log("Language toggled");
+    }
+    function toggleTheme() {
+      // Implement theme switching logic (e.g., toggling a CSS class on body)
+      document.body.classList.toggle('dark-theme');
+      console.log("Theme toggled");
+    }
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
