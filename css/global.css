@@ -17,7 +17,7 @@ body {
 }
 
 /* ==================================================================
-   Header & Navigation
+   Header & Navigation (Desktop)
    ================================================================== */
 header {
   background-color: #9b87f5;
@@ -147,7 +147,7 @@ footer {
 }
 
 /* ==================================================================
-   Floating Icons
+   Floating Icons (Desktop Only)
    ================================================================== */
 .floating-icons {
   position: fixed;
@@ -183,7 +183,7 @@ footer {
    Modal Overlay & Content
    ================================================================== */
 .modal-overlay {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   inset: 0;
   background-color: rgba(0,0,0,0.7);
@@ -243,12 +243,11 @@ footer {
    Modal Body & Form Layout (Grid: Table-like)
    ================================================================== */
 .modal-body {
-  padding: 0.90rem;
+  padding: 0.9rem;
   flex: 1;
   overflow-y: auto;
 }
 
-/* Use CSS Grid for a two-column layout on big screens */
 .modal-body form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -273,7 +272,7 @@ footer {
 }
 
 /* ==================================================================
-   Modal Footer: Submit Button Aligned Right
+   Modal Footer: Submit Button
    ================================================================== */
 .modal-footer {
   display: flex;
@@ -286,7 +285,7 @@ footer {
   background-color: #9b87f5;
   color: #fff;
   border: none;
-  padding: 0.75rem 1.0rem;
+  padding: 0.75rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -342,45 +341,11 @@ body[data-theme="dark"] .modal-content form {
 }
 
 /* ==================================================================
-   Mobile Navigation & Menu (Responsive Overrides)
+   Hide Mobile Nav on Desktop
    ================================================================== */
-@media (max-width: 768px) {
-  /* Display mobile nav */
-  .mobile-nav {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #9b87f5;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 2500;
-  }
-  .mobile-nav .mobile-nav-item {
-    color: white;
-    text-align: center;
-    flex: 1;
-  }
-  /* Hide desktop-only elements */
-  .desktop-nav,
-  .toggle-container.desktop-only,
-  .floating-icons.desktop-only {
-    display: none;
-  }
-  /* Mobile services menu styling */
+@media screen and (min-width: 769px) {
+  .mobile-nav,
   .mobile-services-menu {
     display: none;
-    position: fixed;
-    bottom: 60px; /* above mobile nav */
-    left: 0;
-    right: 0;
-    background-color: #f1f0fb;
-    z-index: 2400;
-    padding: 10px;
-  }
-  .mobile-services-menu.active {
-    display: block;
   }
 }
