@@ -17,7 +17,7 @@ body {
 }
 
 /* ==================================================================
-   Header & Navigation (Desktop)
+   Header & Navigation
    ================================================================== */
 header {
   background-color: #9b87f5;
@@ -27,14 +27,14 @@ header {
   position: relative;
 }
 
-.desktop-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.desktop-nav a {
+header nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -147,7 +147,7 @@ footer {
 }
 
 /* ==================================================================
-   Floating Icons (Desktop Only)
+   Floating Icons
    ================================================================== */
 .floating-icons {
   position: fixed;
@@ -183,7 +183,7 @@ footer {
    Modal Overlay & Content
    ================================================================== */
 .modal-overlay {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   inset: 0;
   background-color: rgba(0,0,0,0.7);
@@ -243,11 +243,12 @@ footer {
    Modal Body & Form Layout (Grid: Table-like)
    ================================================================== */
 .modal-body {
-  padding: 0.9rem;
+  padding: 1rem;
   flex: 1;
   overflow-y: auto;
 }
 
+/* Use CSS Grid for a two-column layout on big screens */
 .modal-body form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -272,7 +273,7 @@ footer {
 }
 
 /* ==================================================================
-   Modal Footer: Submit Button
+   Modal Footer: Submit Button Aligned Right
    ================================================================== */
 .modal-footer {
   display: flex;
@@ -285,7 +286,7 @@ footer {
   background-color: #9b87f5;
   color: #fff;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -341,11 +342,9 @@ body[data-theme="dark"] .modal-content form {
 }
 
 /* ==================================================================
-   Hide Mobile Nav on Desktop
+   Hide Mobile Nav & Menu by default (Desktop-First)
    ================================================================== */
-@media screen and (min-width: 769px) {
-  .mobile-nav,
-  .mobile-services-menu {
-    display: none;
-  }
+.mobile-nav,
+.mobile-services-menu {
+  display: none;
 }
