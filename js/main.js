@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Dummy functions for language and theme toggling
+  // Dummy functions for toggling language and theme
   function toggleLanguage() {
-    // Iterate through elements with data attributes and toggle text content
+    // Iterate through elements with data attributes to toggle language
     var elements = document.querySelectorAll('[data-en]');
     elements.forEach(function(el) {
       if (el.innerText.trim() === el.getAttribute('data-en')) {
