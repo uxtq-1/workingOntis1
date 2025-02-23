@@ -20,7 +20,7 @@
 </head>
 <body>
   <!-- ==================================================================
-       Header Section: Navigation & Toggle Buttons (Desktop Only)
+       Header Section: Desktop Navigation & Toggle Buttons
        ================================================================== -->
   <header>
     <nav class="desktop-nav">
@@ -93,7 +93,7 @@
   </footer>
 
   <!-- ==================================================================
-       Floating Icons (Triggers for Modals)
+       Floating Icons (Desktop Only)
        ================================================================== -->
   <div class="floating-icons desktop-only">
     <button class="floating-icon" data-modal="join-modal" aria-label="Join Us" tabindex="0">
@@ -114,11 +114,9 @@
         <button class="close-modal" data-close aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
-        <!-- Here you can integrate your Chatbot/Chatbot AI widget -->
         <p data-en="Chat with our AI assistant." data-es="Chatea con nuestro asistente AI.">
           Chat with our AI assistant.
         </p>
-        <!-- Example Chatbot container -->
         <div id="chatbot-container">
           <!-- Chatbot integration code goes here -->
         </div>
@@ -235,7 +233,7 @@
   </div>
 
   <!-- ==================================================================
-       Mobile Bottom Navigation & Services Menu (Small Screens)
+       Mobile Bottom Navigation & Services Menu (Mobile Only)
        ================================================================== -->
   <nav class="mobile-nav mobile-only">
     <a href="index.html" class="mobile-nav-item">
@@ -254,7 +252,7 @@
     </button>
   </nav>
 
-  <!-- Hidden Mobile Services Menu -->
+  <!-- Mobile Services Menu -->
   <div class="mobile-services-menu mobile-only" id="mobile-services-menu">
     <ul>
       <li><a href="business-operations.html">Business Operations</a></li>
@@ -265,59 +263,9 @@
   </div>
 
   <!-- ==================================================================
-       JavaScript: Main Functionality & Mobile Menu Toggle
+       JavaScript: Main Functionality & Mobile Interactivity
        ================================================================== -->
   <script src="js/main.js"></script>
   <script src="js/service-worker.js"></script>
-  <script>
-    // Example JavaScript to handle toggles and modal popups
-
-    // Desktop toggles
-    document.getElementById('desktop-language-toggle').addEventListener('click', function() {
-      // Toggle language between EN and ES (update text content using data attributes)
-      toggleLanguage();
-    });
-    document.getElementById('desktop-theme-toggle').addEventListener('click', function() {
-      // Toggle theme between Light and Dark
-      toggleTheme();
-    });
-
-    // Mobile toggles
-    document.getElementById('mobile-language-toggle').addEventListener('click', function() {
-      toggleLanguage();
-    });
-    document.getElementById('mobile-theme-toggle').addEventListener('click', function() {
-      toggleTheme();
-    });
-    document.getElementById('mobile-chat-toggle').addEventListener('click', function() {
-      // Open chatbot modal
-      openModal('chat-modal');
-    });
-    document.getElementById('services-toggle').addEventListener('click', function() {
-      // Toggle mobile services menu
-      document.getElementById('mobile-services-menu').classList.toggle('active');
-    });
-
-    // Modal close functionality
-    document.querySelectorAll('.close-modal').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        this.closest('.modal-overlay').classList.remove('active');
-      });
-    });
-
-    // Dummy functions for toggles
-    function toggleLanguage() {
-      // Here, implement language switching logic (e.g., iterating over elements with data attributes)
-      console.log("Language toggled");
-    }
-    function toggleTheme() {
-      // Implement theme switching logic (e.g., toggling a CSS class on body)
-      document.body.classList.toggle('dark-theme');
-      console.log("Theme toggled");
-    }
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.add('active');
-    }
-  </script>
 </body>
 </html>
