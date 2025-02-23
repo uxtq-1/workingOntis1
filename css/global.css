@@ -27,14 +27,14 @@ header {
   position: relative;
 }
 
-header nav ul {
+.desktop-nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-header nav a {
+.desktop-nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -342,9 +342,45 @@ body[data-theme="dark"] .modal-content form {
 }
 
 /* ==================================================================
-   Hide Mobile Nav & Menu by default (Desktop-First)
+   Mobile Navigation & Menu (Responsive Overrides)
    ================================================================== */
-.mobile-nav,
-.mobile-services-menu {
-  display: none;
+@media (max-width: 768px) {
+  /* Display mobile nav */
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #9b87f5;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 2500;
+  }
+  .mobile-nav .mobile-nav-item {
+    color: white;
+    text-align: center;
+    flex: 1;
+  }
+  /* Hide desktop-only elements */
+  .desktop-nav,
+  .toggle-container.desktop-only,
+  .floating-icons.desktop-only {
+    display: none;
+  }
+  /* Mobile services menu styling */
+  .mobile-services-menu {
+    display: none;
+    position: fixed;
+    bottom: 60px; /* above mobile nav */
+    left: 0;
+    right: 0;
+    background-color: #f1f0fb;
+    z-index: 2400;
+    padding: 10px;
+  }
+  .mobile-services-menu.active {
+    display: block;
+  }
 }
